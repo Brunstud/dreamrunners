@@ -2,7 +2,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from './views/Home.vue'; // 正确导入 Home 组件
-import NotFound from '../views/NotFound.vue';
+import NotFound from './views/NotFound.vue';
 
 Vue.use(VueRouter);
 
