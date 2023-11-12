@@ -2,11 +2,13 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from './views/Home.vue'; // 正确导入 Home 组件
+import NotFound from '../views/NotFound.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   { path: '/', component: Home }, // Home 是主页面的组件
+  { path: '*', component: NotFound,},
   { path: '/main', component: () => import('./views/Main.vue') },
   { path: '/latterns/:id', component: () => import('./views/LatternsCatch.vue'), props: true },
   { path: '/fly-latterns', component: () => import('./views/LatternsFly.vue') },
@@ -17,6 +19,7 @@ const routes = [
 
 const router = new VueRouter({
   routes,
+  base: process.env.BASE_URL,
   mode: 'history', // 使用历史模式路由
 });
 
